@@ -1,0 +1,217 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
+}
+
+a {
+    text-decoration: none;
+    color: #e63946; /* Hint of red for links */
+}
+
+a:hover {
+    color: #ff5e73; /* Lighter red on hover */
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Header */
+header {
+    background-color: #333; /* Dark header */
+    color: white;
+    padding: 10px 0;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header li {
+    margin: 0 15px;
+}
+
+header a {
+    color: white;
+    font-weight: bold;
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #e63946;
+}
+
+header a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e63946;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+header a:hover:after {
+    transform: scaleX(1);
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+    filter: grayscale(100%); /* Greyscale effect */
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Technical Interests */
+h2 {
+    color: #e63946; /* Hint of red for section headings */
+}
+
+/* Portfolio and Project Details */
+div {
+    background: #2a2a2a; /* Subtle grey background */
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #e0e0e0; /* Light text for readability */
+}
+
+a {
+    color: #e63946;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ff5e73;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide-up Animation */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Portfolio Item Hover Animation */
+.portfolio-item {
+    animation: slideUp 0.5s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Hover Animation */
+button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff5e73;
+    transform: translateY(-5px);
+}
+
+/* Reveal Effect */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    header ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    div {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header a {
+        padding: 0.5rem;
+    }
+
+    main {
+        padding: 0.5rem;
+    }
+
+    div {
+        padding: 0.5rem;
+    }
+}
